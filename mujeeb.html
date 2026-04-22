@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap');
+
+    :root {
+        --deep-red: #7a0012;
+        --gold-gradient: linear-gradient(45deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+        --gold-solid: #d4af37;
+        --cream: #fdf5e6;
+    }
+
+    body, html {
+        margin: 0;
+        padding: 0;
+        background-color: var(--deep-red);
+        font-family: 'Poppins', sans-serif;
+        color: var(--cream);
+        overflow-x: hidden;
+    }
+
+    /* Background Pattern */
+    .bg-overlay {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: url('https://www.transparenttextures.com/patterns/arabesque.png');
+        opacity: 0.15;
+        z-index: -1;
+    }
+
+    /* Floating Gold Particles Animation */
+    .particle {
+        position: fixed;
+        background: var(--gold-solid);
+        border-radius: 50%;
+        opacity: 0.6;
+        pointer-events: none;
+        animation: float 15s infinite linear;
+        z-index: 0;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+        50% { opacity: 0.8; }
+        100% { transform: translateY(-10vh) translateX(50px); opacity: 0; }
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 60px 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .bismillah {
+        font-family: 'Amiri', serif;
+        font-size: 2.5rem;
+        background: var(--gold-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+    }
+
+    .header-text {
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        color: var(--gold-solid);
+    }
+
+    .names {
+        font-family: 'Playfair Display', serif;
+        font-size: 3.5rem;
+        margin: 20px 0;
+        line-height: 1.2;
+    }
+
+    .names span {
+        display: block;
+        font-size: 1.5rem;
+        color: var(--gold-solid);
+        font-style: italic;
+    }
+
+    .house-name {
+        font-style: italic;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        border-bottom: 1px solid var(--gold-solid);
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    .event-card {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--gold-solid);
+        padding: 30px;
+        margin: 40px 0;
+        border-radius: 0px 30px 0px 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .event-card h2 {
+        font-family: 'Amiri', serif;
+        color: var(--gold-solid);
+        font-size: 2rem;
+        margin-top: 0;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 30px;
+        border: 1px solid var(--gold-solid);
+        color: var(--gold-solid);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        transition: 0.4s;
+    }
+
+    .btn:hover {
+        background: var(--gold-gradient);
+        color: var(--deep-red);
+    }
+
+    .rsvp-section {
+        margin-top: 60px;
+    }
+
+    .wa-link {
+        color: var(--gold-solid);
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+
+</style>
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <script>
+        for (let i = 0; i < 20; i++) {
+            let p = document.createElement('div');
+            p.className = 'particle';
+            let size = Math.random() * 4 + 'px';
+            p.style.width = size;
+            p.style.height = size;
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.animationDelay = Math.random() * 15 + 's';
+            document.body.appendChild(p);
+        }
+    </script>
+
+    <div class="container">
+        <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+        <div class="header-text">In the Name of Allah, Most Gracious, Most Merciful</div>
+
+        <p>Together with our families, we invite you to celebrate the Nikah of</p>
+        
+        <h1 class="names">
+            Mujeeb Rahman Nm
+            <span>&</span>
+            Hana Fathima
+        </h1>
+        
+        <div class="house-name">PARAPPAN SQUARE VENNIYUR</div>
+
+        <div class="event-card">
+            <h2>الـنـكـاح (The Nikah)</h2>
+            <p><strong>Saturday, 22nd Aug 2026</strong></p>
+            <p>10:00 AM onwards</p>
+            <p>Parappan Square International Convention Center, Venniyur</p>
+            <a href="https://share.google/tK8fv2ts0T9xmlAi4" class="btn">Open Maps</a>
+        </div>
+
+        <div class="rsvp-section">
+            <p>Kindly request your prayers as we embark on this journey.</p>
+            <p>Confirm your presence via WhatsApp:</p>
+            <a href="https://wa.me/910000000000" class="wa-link">Click here to RSVP</a>
+        </div>
+    </div>
+
+</body>
+</html>
